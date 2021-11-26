@@ -1,0 +1,64 @@
+\documentclass[oneside,11pt]{memoir}
+\input{structure.tex}
+\renewcommand{\contentsname}{Съдържание}
+
+\title{Историята на другия мъдрец}
+\author{Хенри Ван Дайк}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\thispagestyle{empty}
+% \ThisCenterWallPaper{1.12}{?.jpg}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node [rectangle, rounded corners, fill=white, opacity=0.75, anchor=south west, minimum width=3.3cm, minimum height=5cm] (box) at (-0.5,-10) (box){};
+  \node[anchor=west, color01, xshift=-1.6cm, yshift=-1.4cm, text width=3cm, font=\sffamily\bfseries\scshape\Large] at (box.north){\thetitle};
+  \node[anchor=west, color01, xshift=-1.65cm, yshift=-4.5cm, text width=3.2cm, font=\sffamily\bfseries] at (box.north){\theauthor};
+\end{tikzpicture}
+
+\newpage
+
+\begin{KeepFromToc}
+  \tableofcontents
+\end{KeepFromToc}
+
+\chapter*{}
+
+\begin{quote}
+  \fontsize{8}{10}\selectfont
+  Този който се стреми към рая за да спаси душата си, \\
+  Може да се придържа към пътя но няма да стигне до целта си; \\
+  Докато онзи който ходи в любов може и надалеч да се скита, \\
+  Бог пак ще го заведе там където са благословените~\footnote{
+  \begin{quote}
+    Who seeks for heaven alone to save his soul, \\
+    May keep the path, but will not reach the goal; \\
+    While he who walks in love may wander far, \\
+    Yet God will bring him where the blessed are.
+  \end{quote}
+  }.
+\end{quote}
+
+\newpage
+
+\chapter*{}
+\emph{\fontsize{9}{10}\selectfont
+Знаете историята за Тримата Мъдреци от Изтока и как те пътуват отдалеч, за да
+предложат своите дарове до яслите-люлка във Витлеем. Но чували ли сте някога
+историята за Другият Мъдрец, който също вижда изгряващата звезда и тръгва да я
+следва, но не пристига със своите събратя в присъствието на младенеца Исус? За
+голямото желание на този четвърти поклонник и как то беше отречено и въпреки
+това изпълнено в отрицанието; за многото му скитания и душевни изпитания; за
+дългия път на неговото търсене и за странния начин по който намира Онзи, когото
+търси -- ще разкажа историята защото съм чул части от нея в Залата на Мечтите, в
+двореца на Човешкото Сърце.}
+
+\newpage
+
+\chapter{Знакът в небето}
+\markboth{Знакът в небето}{}
+
+
+\end{document}

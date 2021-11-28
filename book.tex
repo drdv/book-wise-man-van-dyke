@@ -10,12 +10,13 @@
 \begin{document}
 
 \thispagestyle{empty}
-% \ThisCenterWallPaper{1.12}{?.jpg}
+%% \ThisCenterWallPaper{1}{pics/p1.jpg}
+%% https://commons.wikimedia.org/wiki/File:The_Story_of_The_Other_Wise_Man_(1920),_p.73.jpg
 
 \begin{tikzpicture}[remember picture,overlay]
-  \node [rectangle, rounded corners, fill=white, opacity=0.75, anchor=south west, minimum width=3.3cm, minimum height=5cm] (box) at (-0.5,-10) (box){};
-  \node[anchor=west, color01, xshift=-1.6cm, yshift=-1.4cm, text width=3.0cm, font=\sffamily\bfseries\scshape\Large] at (box.north){\thetitle};
-  \node[anchor=west, color01, xshift=-1.65cm, yshift=-4.5cm, text width=3.2cm, font=\sffamily\bfseries] at (box.north){\theauthor};
+  \node[anchor=west, color01] at (-0.5, -9.5){\thetitle};
+  \node[anchor=west, color01] at (-0.5, 0.5){\theauthor};
+  %% \node[anchor=west, font=\sffamily\tiny] at (-0.5, -10.5){github.com/drdv/book-wise-man-van-dyke};
 \end{tikzpicture}
 
 \newpage

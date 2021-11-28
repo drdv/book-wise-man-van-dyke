@@ -1,3 +1,5 @@
+[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)
+
 ### Превод на The Story of The Other Wise Man (Henry van Dyke)
   + this translation is in the public domain
   + това е първата книга която превеждам - read at your own risk :)

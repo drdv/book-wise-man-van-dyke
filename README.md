@@ -1,6 +1,6 @@
 [![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)
 
-[https://drdv.github.io/the-other-wise-man pdf]
+[PDF](https://drdv.github.io/the-other-wise-man)
 
 ### Превод на The Story of The Other Wise Man (Henry van Dyke)
   + Това е първата книга която превеждам - read at your own risk :)

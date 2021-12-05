@@ -16,10 +16,16 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Tectonic
-        run: tectonic book.tex
+        run: make
 
-      - name: Upload pdf
-        uses: actions/upload-artifact@v2
-        with:
-          name: book
-          path: book.pdf
+      # - name: Upload pdf
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: book
+      #     path: book.pdf
+
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@4.1.7
+      #   with:
+      #     branch: gh-pages
+      #     folder: build

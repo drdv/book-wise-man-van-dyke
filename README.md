@@ -1,6 +1,6 @@
 [![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)
 
-### Превод на The Story of The Other Wise Man (Henry van Dyke)
+### Превод на "The Story of The Other Wise Man" (Henry van Dyke)
   + Това е първата книга която превеждам - read at your own risk :)
     + всяка помощ за подобряване на превода е добре дошла
     + не съм запознат дори с основни правила в превода (всеки съвет ще ми е от полза)
@@ -13,9 +13,9 @@
     + може да се свали от [тук](https://drdv.github.io/the-other-wise-man)
 
 ### TODO
-  + stop using the current latex template (I don't like the license)
   + пряка реч формат: сега използвам кавички (може би не е добра идея)
   + verify: пълен член, главни букви, в общи линии съм неграмотен
   + Намерих компилация от [класически коледни
     истории](https://www.book.store.bg/p239818) в която има превод (на Росица
     Тодорова) под заглавието "Четвъртият мъдрец" (да го намеря и прочета)
+  + stop using the current latex template (I don't like the license)

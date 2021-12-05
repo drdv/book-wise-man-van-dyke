@@ -2,6 +2,7 @@ fn=book
 
 .PHONY: all
 all:
+	git log -1 --pretty='format:%cd (%h)' --date=format:'%Y-%m-%d %H:%M:%S' > .version
 	mkdir -p build
 	tectonic $(fn).tex -o build
 	mv build/$(fn).pdf build/the-other-wise-man.pdf
@@ -15,8 +16,9 @@ generate_page:
 
 .PHONY: open
 open:
-	open $(fn).pdf
+	open build/the-other-wise-man.pdf
 
 .PHONY: clean
 clean:
 	rm -rf build
+	rm -rf .version

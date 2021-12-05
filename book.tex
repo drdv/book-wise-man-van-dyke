@@ -10,17 +10,34 @@
 \begin{document}
 
 \thispagestyle{empty}
+\pagenumbering{gobble}
 %% https://commons.wikimedia.org/wiki/File:The_Story_of_The_Other_Wise_Man_(1920),_p.73.jpg
 \ThisCenterWallPaper{1}{pics/front.jpg}
 
 \begin{tikzpicture}[remember picture,overlay]
   \node[anchor=west, font=\fontsize{16}{10}\selectfont, color01] at (-0.5, -9.5){\thetitle};
   \node[anchor=west, font=\fontsize{16}{10}\selectfont, color01] at (-0.5, 0.5){\theauthor};
-  \node[anchor=west, font=\fontsize{3}{3}\selectfont] at (-0.5, -10.0){\verb|github.com/drdv/the-other-wise-man|};
 \end{tikzpicture}
 
 \newpage
 
+\thispagestyle{empty}
+{
+  \fontsize{7}{5}\selectfont
+  \topskip0pt
+  \vspace*{\fill}
+  \begin{center}
+    \begin{itemize}
+    \item Източник: {\color{blue}\verb|github.com/drdv/the-other-wise-man|}
+    \item Версия: {\color{blue}\input{.version}}
+    \end{itemize}
+  \end{center}
+  \vspace*{\fill}
+}
+
+\newpage
+
+\pagenumbering{arabic}
 \begin{KeepFromToc}
   \tableofcontents
 \end{KeepFromToc}

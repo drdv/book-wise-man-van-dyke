@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    runs-on: dxjoke/tectonic-docker
+    runs-on: dxjoke/tectonic-docker@sha256:8397f92406320bfff8da95cbec41a683a956c6dbbe870268c79a887080dcbc4f
 
     steps:
       - uses: actions/checkout@v2

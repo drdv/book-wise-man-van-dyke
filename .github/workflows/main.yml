@@ -7,24 +7,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Git repository
+      - name: set up git repository
         uses: actions/checkout@v2
 
-      - name: Compile LaTeX document
+      - name: add tectonic support
         uses: wtfjoke/setup-tectonic@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Run Tectonic
+      - name: generate book pdf and html page
         run: make
 
-      # - name: Upload pdf
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: book
-      #     path: book.pdf
-
-      - name: Deploy
+      - name: deploy pages
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages

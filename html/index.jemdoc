@@ -1,0 +1,12 @@
+# jemdoc: {index.html}, fwtitle, nofooter
+=
+[]
+
+=== Henry van Dyke, "The Story of The Other Wise Man"
+
+~~~
+{}{img_left}{front.jpg}{front.jpeg}{600}
+~~~
+
+- [https://www.gutenberg.org/ebooks/10679 Оригинална версия (английски)]
+- Превод на български език: [the-other-wise-man.pdf pdf] ([https://github.com/drdv/the-other-wise-man източник])

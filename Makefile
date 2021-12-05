@@ -1,7 +1,7 @@
 fn=book
 
 .PHONY: all
-all: generate_page
+all:
 	mkdir -p build
 	tectonic $(fn).tex -o build
 	mv build/$(fn).pdf build/the-other-wise-man.pdf

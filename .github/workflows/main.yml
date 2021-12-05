@@ -24,8 +24,8 @@ jobs:
       #     name: book
       #     path: book.pdf
 
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@4.1.7
-      #   with:
-      #     branch: gh-pages
-      #     folder: build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages
+          folder: build

@@ -4,10 +4,13 @@ on: push
 
 jobs:
   build:
-    runs-on: dxjoke/tectonic-docker@sha256:8397f92406320bfff8da95cbec41a683a956c6dbbe870268c79a887080dcbc4f
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Set up Git repository
+        uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo "Hello, world!"
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: book.tex

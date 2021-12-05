@@ -14,4 +14,12 @@ jobs:
         uses: wtfjoke/setup-tectonic@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: tectonic book.tex
+
+      - name: Run Tectonic
+        run: tectonic book.tex
+
+      - name: Upload pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: book
+          path: book.pdf

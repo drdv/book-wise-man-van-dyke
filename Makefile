@@ -1,14 +1,15 @@
 fn=book
+BUILD_DIR=build
 
 .PHONY: all
 all:
 	git log -1 --pretty='format:%cd (%h)' --date=format:'%Y-%m-%d %H:%M:%S' > .version
-	mkdir -p build
-	tectonic $(fn).tex -o build
-	mv build/$(fn).pdf build/the-other-wise-man.pdf
-	cp pics/front.jpg build
-	cp html/index.html build
-	cp html/jemdoc.css build
+	mkdir -p ${BUILD_DIR}
+	tectonic $(fn).tex -o ${BUILD_DIR}
+	mv ${BUILD_DIR}/$(fn).pdf ${BUILD_DIR}/the-other-wise-man.pdf
+	cp pics/front.jpg ${BUILD_DIR}
+	cp html/index.html ${BUILD_DIR}
+	cp html/jemdoc.css ${BUILD_DIR}
 
 .PHONY: generate_page
 generate_page:
@@ -16,9 +17,9 @@ generate_page:
 
 .PHONY: open
 open:
-	open build/the-other-wise-man.pdf
+	open ${BUILD_DIR}/the-other-wise-man.pdf
 
 .PHONY: clean
 clean:
-	rm -rf build
+	rm -rf ${BUILD_DIR}
 	rm -rf .version

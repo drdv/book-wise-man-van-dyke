@@ -3,8 +3,11 @@
 ### Превод на The Story of The Other Wise Man (Henry van Dyke)
   + this translation is in the public domain
   + това е първата книга която превеждам - read at your own risk :)
-    + бих бил благодарен ако някой грамотен човек я прочете и редактира
-  + still work in progress ...
+    + всяка помощ свързана с подобряване на превода е добре дощла
 
 ### TODO
   + stop using current latex template (I don't like the license)
+  + пряка реч формат: сега използвам кавички (може би не е добра идея)
+  + пълен член
+  + "От какво имаше да се страхува? ..." rework
+  + Главни букви: verify

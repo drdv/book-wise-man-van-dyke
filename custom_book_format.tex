@@ -1,0 +1,77 @@
+% ------------------------------------------------------------------------------
+% This document is meant to be compiled with tectonic (XeTeX compatible)
+%
+% I got some ideas from https://www.latextemplates.com/template/ebook-book
+% ------------------------------------------------------------------------------
+\documentclass[
+  10pt,    % font size
+  a6paper, % bunko size in Japan (\setstocksize{14.8cm}{10.5cm})
+  openany, % a chapter may start on either a recto or verso page
+  oneside, % headers and footers are the same for odd and even pages
+]{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[main=bulgarian]{babel}
+\usepackage{tikz}
+\usepackage{wallpaper}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}  % paper = stock
+\setlrmarginsandblock{30pt}{30pt}{*}
+\setulmarginsandblock{30pt}{40pt}{*}
+\setheadfoot{\headheight}{\headheight}
+\setheaderspaces{*}{0pt}{*}
+\setlength{\parindent}{10pt}
+
+% --------------------------------------------------
+% footnotes (https://www.overleaf.com/learn/latex/Footnotes)
+% --------------------------------------------------
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\setlength{\footmarkwidth}{0pt} % footnote indentation
+
+\usepackage{perpage}
+\MakePerPage{footnote}
+
+% --------------------------------------------------
+% Part formatting
+% --------------------------------------------------
+\renewcommand{\partnamefont}{\centering\itshape\Huge}
+\renewcommand{\partnumfont}{\Huge}
+\renewcommand{\parttitlefont}{\centering}
+
+% --------------------------------------------------
+% Font
+%
+% see:
+% 1. fontsquirrel.com/fonts/linux-libertine
+% 2. mirrors.ibiblio.org/CTAN/fonts/libertine/doc/libertine.pdf (Section 5)
+% 3. ctan.mines-albi.fr/macros/unicodetex/latex/fontspec/fontspec.pdf (Sections 2.2, 4.1)
+% --------------------------------------------------
+\usepackage{fontspec}
+\setmainfont{LinLibertine}[
+  Extension = .otf,
+  UprightFont = *_R,
+  ItalicFont = *_RI,
+  BoldFont = *_RB,
+  BoldItalicFont = *_RBI,
+]
+
+% --------------------------------------------------
+% Header and footer
+% --------------------------------------------------
+\makepagestyle{mio}
+\setlength{\headwidth}{\textwidth}
+\makeheadrule{mio}{\textwidth}{0.1mm}
+\makeoddhead{mio}{\scriptsize{\theauthor\hskip.2cm\vrule\hskip.2cm{\itshape\leftmark}}}{}{}
+\makeoddfoot{mio}{}{\scriptsize\thepage}{}
+\makeoddfoot{plain}{}{\scriptsize\thepage}{}
+\pagestyle{mio}
+
+% --------------------------------------------------
+% Finalize memoir setup
+% --------------------------------------------------
+% ctan.mines-albi.fr/macros/latex/contrib/memoir/memman.pdf (Section 3.4)
+\midsloppy             % very important for reducing overflow
+\checkandfixthelayout  % consider memoir change

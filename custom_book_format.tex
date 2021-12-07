@@ -38,8 +38,8 @@
 % Part formatting
 % --------------------------------------------------
 \renewcommand{\partnamefont}{\centering\itshape\Huge}
-\renewcommand{\partnumfont}{\Huge}
-\renewcommand{\parttitlefont}{\centering}
+\renewcommand{\partnumfont}{\itshape\Huge}
+\renewcommand{\parttitlefont}{\centering\itshape}
 
 % --------------------------------------------------
 % Font
@@ -63,8 +63,9 @@
 % --------------------------------------------------
 \makepagestyle{mio}
 \setlength{\headwidth}{\textwidth}
+\setlength{\headsep}{0.3cm}
 \makeheadrule{mio}{\textwidth}{0.1mm}
-\makeoddhead{mio}{\scriptsize{\theauthor\hskip.2cm\vrule\hskip.2cm{\itshape\leftmark}}}{}{}
+\makeoddhead{mio}{\scriptsize{\partname\hskip.1cm\thepart\hskip.2cm\vrule\hskip.2cm{\itshape\leftmark}}}{}{}
 \makeoddfoot{mio}{}{\scriptsize\thepage}{}
 \makeoddfoot{plain}{}{\scriptsize\thepage}{}
 \pagestyle{mio}
@@ -72,8 +73,7 @@
 % --------------------------------------------------
 % Quotes
 % --------------------------------------------------
-\renewenvironment{quote}
-{\list{}{\em\leftmargin=2pt}\item[]}
+\renewenvironment{quote}{\list{}{\em\leftmargin=10pt}\item[]}
 
 % --------------------------------------------------
 % Finalize memoir setup

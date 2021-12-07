@@ -1,6 +1,6 @@
 \input{custom_book_format.tex}
 
-% \pagestyle{showlocs}  % use for debugging the layout
+%% \pagestyle{showlocs}  % use for debugging the layout
 
 \title{Историята на другият мъдрец}
 \author{Хенри Ван Дайк}
@@ -9,29 +9,28 @@
 
 \thispagestyle{empty}
 \pagenumbering{gobble}
-% commons.wikimedia.org/wiki/File:The_Story_of_The_Other_Wise_Man_(1920),_p.73.jpg
 \ThisCenterWallPaper{1}{pics/front.jpg}
 \definecolor[named]{custom_color}{rgb}{.2,.4,.6}
 \begin{tikzpicture}[remember picture,overlay]
   \node[anchor=west, font=\fontsize{16}{10}\selectfont, custom_color] at (-1, -0.4){\theauthor};
   \node[anchor=west, font=\fontsize{16}{10}\selectfont, custom_color] at (-1, -11.5){\thetitle};
+  \node[anchor=west, font=\fontsize{5}{5}\selectfont] at (-0.95, -12.5){
+    източник: {\color{blue}\verb|github.com/drdv/the-other-wise-man|}};
+  \node[anchor=west, font=\fontsize{5}{5}\selectfont] at (-0.95, -12.8){
+    версия: {\color{blue}\input{.version}}};
 \end{tikzpicture}
 
-\newpage
+%% \newpage
 
-\thispagestyle{empty}
-{
-  \fontsize{7}{5}\selectfont
-  \topskip0pt
-  \vspace*{\fill}
-  \begin{center}
-    \begin{itemize}
-    \item Източник: {\color{blue}\verb|github.com/drdv/the-other-wise-man|}
-    \item Версия: {\color{blue}\input{.version}}
-    \end{itemize}
-  \end{center}
-  \vspace*{\fill}
-}
+%% \thispagestyle{empty}
+%% \pagenumbering{gobble}
+%% \begingroup
+%% \fontsize{7}{5}\selectfont
+%% \begin{itemize}
+%% \item[] Източник: {\color{blue}\verb|github.com/drdv/the-other-wise-man|}
+%% \item[] Версия: {\color{blue}\input{.version}}
+%% \end{itemize}
+%% \endgroup
 
 \newpage
 
@@ -39,6 +38,8 @@
 \begin{KeepFromToc}
   \tableofcontents
 \end{KeepFromToc}
+
+\newpage
 
 \input{book_content.tex}
 

@@ -36,6 +36,9 @@
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \setlength{\footmarkwidth}{0pt} % footnote indentation
 
+% \usepackage[perpage]{footmisc} resets the counter automatically
+% so I don't have to manually use \setcounter{footnote}{0}
+% but gives warnings (which I don't like) so I use the following approach:
 \usepackage{perpage}
 \MakePerPage{footnote}
 

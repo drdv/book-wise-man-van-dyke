@@ -10,6 +10,11 @@
   oneside, % headers and footers are the same for odd and even pages
 ]{memoir}
 
+\renewcommand\printtoctitle[1]{\itshape\Huge #1}
+% see http://www.ctex.org/documents/packages/contents/tocloft.pdf
+\renewcommand{\cftpartfont}{\large\itshape}
+\renewcommand{\cftpartpagefont}{\large\itshape}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[main=bulgarian]{babel}
@@ -18,7 +23,7 @@
 \usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 
-\settrimmedsize{\stockheight}{\stockwidth}{*}  % paper = stock
+\settrimmedsize{\stockheight}{\stockwidth}{*}  % paper = stock (i.e., trim = 0)
 \setlrmarginsandblock{30pt}{30pt}{*}
 \setulmarginsandblock{30pt}{40pt}{*}
 \setheadfoot{\headheight}{\headheight}

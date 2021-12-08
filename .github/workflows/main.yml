@@ -29,8 +29,8 @@ jobs:
             -f latex
             -t epub
             --toc
-            --number-sections \
-            --epub-cover-image pics/front.jpg \
+            --number-sections
+            --epub-cover-image pics/front.jpg
             --output=build/the-other-wise-man.epub
             book.tex
 

@@ -21,6 +21,18 @@ jobs:
       - name: generate book pdf and html page
         run: make
 
+      - name: generate html
+        uses: docker://pandoc/core:latest
+        with:
+          args: >-
+            book.tex
+            --standalone
+            -f latex
+            -t html
+            --toc
+            --number-sections
+            -o build/the-other-wise-man.html
+
       - name: generate epub
         uses: docker://pandoc/core:latest
         with:

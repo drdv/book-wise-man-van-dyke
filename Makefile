@@ -23,6 +23,16 @@ epub:
 	--epub-cover-image pics/front.jpg \
 	-o ${BUILD_DIR}/${FILE_NAME}.epub
 
+.PHONY: html
+html:
+	# https://pandoc.org/MANUAL.html#specifying-formast
+	pandoc ${SOURCE_FILE}.tex -s \
+	-f latex \
+	-t html \
+	--toc \
+	--number-sections \
+	-o ${BUILD_DIR}/${FILE_NAME}.html
+
 .PHONY: generate_page
 generate_page:
 	cd html && make

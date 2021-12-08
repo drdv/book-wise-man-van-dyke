@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu:jammy-20211122
+    runs-on: ubuntu-latest
 
     steps:
       - name: set up git repository

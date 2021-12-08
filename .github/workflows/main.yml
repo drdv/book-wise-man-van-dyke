@@ -23,8 +23,8 @@ jobs:
 
       - name: generate epub
         uses: docker://pandoc/core:2.9
-          with:
-            args: "--help" # gets appended to pandoc command
+        with:
+          args: "--help" # gets appended to pandoc command
         run: make epub
 
       - name: deploy pages

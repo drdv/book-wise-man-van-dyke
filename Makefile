@@ -21,7 +21,7 @@ epub:
 	--toc \
 	--number-sections \
 	--epub-cover-image pics/front.jpg \
-	-o ${BUILD_DIR}/${SOURCE_FILE}.epub
+	-o ${BUILD_DIR}/${FILE_NAME}.epub
 
 .PHONY: generate_page
 generate_page:

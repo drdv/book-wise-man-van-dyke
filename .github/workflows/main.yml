@@ -25,14 +25,14 @@ jobs:
         uses: docker://pandoc/core:2.9
         with:
           args: >-
+            book.tex
             --standalone
             -f latex
             -t epub
             --toc
             --number-sections
             --epub-cover-image pics/front.jpg
-            --output=build/the-other-wise-man.epub
-            book.tex
+            -o build/the-other-wise-man.epub
 
       - name: deploy pages
         uses: JamesIves/github-pages-deploy-action@4.1.7

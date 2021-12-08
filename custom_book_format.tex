@@ -15,12 +15,32 @@
 \renewcommand{\cftpartfont}{\large\itshape}
 \renewcommand{\cftpartpagefont}{\large\itshape}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[main=bulgarian]{babel}
+% https://tex.stackexchange.com/a/3000
+% https://tex.stackexchange.com/a/482
+%  - we shouldn't use inputenc and fontenc
+%  - we loose most benefits of microtype (I load it anyway)
+\usepackage{microtype}
+
+% --------------------------------------------------
+% Font
+%
+% see:
+% 1. fontsquirrel.com/fonts/linux-libertine
+% 2. mirrors.ibiblio.org/CTAN/fonts/libertine/doc/libertine.pdf (Section 5)
+% 3. ctan.mines-albi.fr/macros/unicodetex/latex/fontspec/fontspec.pdf (Sections 2.2, 4.1)
+% --------------------------------------------------
+\usepackage{fontspec}
+\setmainfont[%
+  Extension = .otf,
+  UprightFont = *_R,
+  ItalicFont = *_RI,
+  BoldFont = *_RB,
+  BoldItalicFont = *_RBI,
+]{LinLibertine}
+\usepackage[main=bulgarian, english]{babel}
+
 \usepackage{tikz}
 \usepackage{wallpaper}
-\usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 
 \settrimmedsize{\stockheight}{\stockwidth}{*}  % paper = stock (i.e., trim = 0)
@@ -35,12 +55,7 @@
 % --------------------------------------------------
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \setlength{\footmarkwidth}{0pt} % footnote indentation
-
-% \usepackage[perpage]{footmisc} resets the counter automatically
-% so I don't have to manually use \setcounter{footnote}{0}
-% but gives warnings (which I don't like) so I use the following approach:
-\usepackage{perpage}
-\MakePerPage{footnote}
+\counterwithin*{footnote}{part}
 
 % --------------------------------------------------
 % Part formatting
@@ -48,23 +63,6 @@
 \renewcommand{\partnamefont}{\centering\itshape\Huge}
 \renewcommand{\partnumfont}{\itshape\Huge}
 \renewcommand{\parttitlefont}{\centering\itshape}
-
-% --------------------------------------------------
-% Font
-%
-% see:
-% 1. fontsquirrel.com/fonts/linux-libertine
-% 2. mirrors.ibiblio.org/CTAN/fonts/libertine/doc/libertine.pdf (Section 5)
-% 3. ctan.mines-albi.fr/macros/unicodetex/latex/fontspec/fontspec.pdf (Sections 2.2, 4.1)
-% --------------------------------------------------
-\usepackage{fontspec}
-\setmainfont{LinLibertine}[
-  Extension = .otf,
-  UprightFont = *_R,
-  ItalicFont = *_RI,
-  BoldFont = *_RB,
-  BoldItalicFont = *_RBI,
-]
 
 % --------------------------------------------------
 % Header and footer

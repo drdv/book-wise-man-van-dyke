@@ -12,6 +12,17 @@ all:
 	cp html/index.html ${BUILD_DIR}
 	cp html/jemdoc.css ${BUILD_DIR}
 
+.PHONY: epub
+epub:
+	# https://pandoc.org/MANUAL.html#specifying-formast
+	pandoc ${SOURCE_FILE}.tex -s \
+	-f latex \
+	-t epub \
+	--toc \
+	--number-sections \
+	--epub-cover-image pics/front.jpg \
+	-o ${BUILD_DIR}/${SOURCE_FILE}.epub
+
 .PHONY: generate_page
 generate_page:
 	cd html && make

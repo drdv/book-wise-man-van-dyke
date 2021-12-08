@@ -14,7 +14,6 @@ all:
 
 .PHONY: epub
 epub:
-	# https://pandoc.org/MANUAL.html#specifying-formast
 	pandoc ${SOURCE_FILE}.tex -s \
 	-f latex \
 	-t epub \
@@ -25,7 +24,6 @@ epub:
 
 .PHONY: html
 html:
-	# https://pandoc.org/MANUAL.html#specifying-formast
 	pandoc ${SOURCE_FILE}.tex -s \
 	-f latex \
 	-t html \

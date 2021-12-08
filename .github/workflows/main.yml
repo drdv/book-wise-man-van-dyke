@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: set up git repository
@@ -20,19 +20,6 @@ jobs:
 
       - name: generate book pdf and html page
         run: make
-
-      - name: generate epub
-        uses: docker://pandoc/core:2.9
-        with:
-          args: >-
-            book.tex
-            --standalone
-            -f latex
-            -t epub
-            --toc
-            --number-sections
-            --epub-cover-image pics/front.jpg
-            -o build/the-other-wise-man.epub
 
       - name: deploy pages
         uses: JamesIves/github-pages-deploy-action@4.1.7

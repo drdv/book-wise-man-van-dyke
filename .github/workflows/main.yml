@@ -30,7 +30,6 @@ jobs:
             -f latex
             -t plain
             --toc
-            --number-sections
             -o build/the-other-wise-man.txt
 
       - name: generate html

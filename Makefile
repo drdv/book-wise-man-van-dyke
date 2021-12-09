@@ -43,7 +43,6 @@ plain_text:
 	-f latex \
 	-t plain \
 	--toc \
-	--number-sections \
 	-o ${BUILD_DIR}/${FILE_NAME}.txt
 
 .PHONY: generate_page

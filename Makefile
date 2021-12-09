@@ -31,6 +31,15 @@ html:
 	--number-sections \
 	-o ${BUILD_DIR}/${FILE_NAME}.html
 
+.PHONY: plain
+plain:
+	pandoc ${SOURCE_FILE}.tex -s \
+	-f latex \
+	-t plain \
+	--toc \
+	--number-sections \
+	-o ${BUILD_DIR}/${FILE_NAME}.txt
+
 .PHONY: generate_page
 generate_page:
 	cd html && make

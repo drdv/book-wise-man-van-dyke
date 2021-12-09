@@ -3,14 +3,20 @@ BUILD_DIR=build
 FILE_NAME=the-other-wise-man
 
 .PHONY: all
-all:
+all: prepare_build tex epub html plain_text
+
+.PHONY: prepare_build
+prepare_build:
 	git log -1 --pretty='format:%cd (%h)' --date=format:'%Y-%m-%d %H:%M:%S' > .version
 	mkdir -p ${BUILD_DIR}
-	tectonic ${SOURCE_FILE}.tex -o ${BUILD_DIR}
-	mv ${BUILD_DIR}/${SOURCE_FILE}.pdf ${BUILD_DIR}/${FILE_NAME}.pdf
 	cp pics/front.jpg ${BUILD_DIR}
 	cp html/index.html ${BUILD_DIR}
 	cp html/jemdoc.css ${BUILD_DIR}
+
+.PHONY: tex
+tex:
+	tectonic ${SOURCE_FILE}.tex -o ${BUILD_DIR}
+	mv ${BUILD_DIR}/${SOURCE_FILE}.pdf ${BUILD_DIR}/${FILE_NAME}.pdf
 
 .PHONY: epub
 epub:
@@ -31,8 +37,8 @@ html:
 	--number-sections \
 	-o ${BUILD_DIR}/${FILE_NAME}.html
 
-.PHONY: plain
-plain:
+.PHONY: plain_text
+plain_text:
 	pandoc ${SOURCE_FILE}.tex -s \
 	-f latex \
 	-t plain \

@@ -19,9 +19,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: generate book pdf and html page
-        run:
-          make prepare_build
-          make tex
+        run: make prepare_build tex
 
       - name: generate plain
         uses: docker://pandoc/core:2.16.2

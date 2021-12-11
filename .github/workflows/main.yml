@@ -21,6 +21,12 @@ jobs:
       - name: generate book pdf and html page
         run: make prepare_build tex
 
+      - name: read .version files
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: ".version"
+
       - name: generate plain
         uses: docker://pandoc/core:2.16.2
         with:
@@ -30,7 +36,7 @@ jobs:
             -f latex
             -t plain
             --toc
-            --metadata date="version: ${{ cat .version }}"
+            --metadata date="version: ${ steps.read_file.outputs.contents }"
             -o build/the-other-wise-man.txt
 
       - name: generate html
@@ -43,7 +49,7 @@ jobs:
             -t html
             --toc
             --number-sections
-            --metadata date="version: ${{ cat .version }}"
+            --metadata date="version: ${ steps.read_file.outputs.contents }"
             -o build/the-other-wise-man.html
 
       - name: generate epub
@@ -56,7 +62,7 @@ jobs:
             -t epub
             --toc
             --number-sections
-            --metadata date="version: ${{ cat .version }}"
+            --metadata date="version: ${ steps.read_file.outputs.contents }"
             --epub-cover-image pics/front.jpg
             -o build/the-other-wise-man.epub
 

@@ -154,7 +154,7 @@
 <header id="title-block-header">
 <h1 class="title">Историята на другият мъдрец</h1>
 <p class="author">Хенри Ван Дайк</p>
-<p class="date">version: $(shell cat .version)</p>
+<p class="date">version: ${ steps.read_file.outputs.contents }</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>

@@ -1,6 +1,6 @@
 Историята на другият мъдрец
 Хенри Ван Дайк
-version: $(shell cat .version)
+version: ${ steps.read_file.outputs.contents }
 
 -   Знакът в небето
 -   При реките на Вавилон

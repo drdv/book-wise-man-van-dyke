@@ -30,7 +30,7 @@ jobs:
             -f latex
             -t plain
             --toc
-            --metadata date="version: $(shell cat .version)"
+            --metadata date="version: ${{ cat .version }}"
             -o build/the-other-wise-man.txt
 
       - name: generate html
@@ -43,7 +43,7 @@ jobs:
             -t html
             --toc
             --number-sections
-            --metadata date="version: $(shell cat .version)"
+            --metadata date="version: ${{ cat .version }}"
             -o build/the-other-wise-man.html
 
       - name: generate epub
@@ -56,7 +56,7 @@ jobs:
             -t epub
             --toc
             --number-sections
-            --metadata date="version: $(shell cat .version)"
+            --metadata date="version: ${{ cat .version }}"
             --epub-cover-image pics/front.jpg
             -o build/the-other-wise-man.epub
 

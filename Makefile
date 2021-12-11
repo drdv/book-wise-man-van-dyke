@@ -25,7 +25,7 @@ epub:
 	-t epub \
 	--toc \
 	--number-sections \
-	--metadata date="version: $(shell cat .version)" \
+	--metadata date="$(shell cat .version)" \
 	--epub-cover-image pics/front.jpg \
 	-o ${BUILD_DIR}/${FILE_NAME}.epub
 
@@ -36,7 +36,7 @@ html:
 	-t html \
 	--toc \
 	--number-sections \
-	--metadata date="version: $(shell cat .version)" \
+	--metadata date="$(shell cat .version)" \
 	-o ${BUILD_DIR}/${FILE_NAME}.html
 
 .PHONY: plain_text
@@ -45,7 +45,7 @@ plain_text:
 	-f latex \
 	-t plain \
 	--toc \
-	--metadata date="version: $(shell cat .version)" \
+	--metadata date="$(shell cat .version)" \
 	-o ${BUILD_DIR}/${FILE_NAME}.txt
 
 .PHONY: generate_page
